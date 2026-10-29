@@ -1,13 +1,12 @@
 comment "Qualcomm Atheros CLD WLAN module"
 
 config QCA_CLD_WLAN
-	bool "Qualcomm Atheros CLD WLAN module"
+	tristate "Qualcomm Atheros CLD WLAN module"
 	default n
 	help
-	  Add support for the Qualcomm Atheros CLD WLAN module. It is only
-	  built into the kernel image, never as a loadable module.
+	  Add support for the Qualcomm Atheros CLD WLAN module
 
-if QCA_CLD_WLAN
+if QCA_CLD_WLAN != n
 
 config QCA_CLD_WLAN_PROFILE
 	string "Configuration profile for Qualcomm Atheros CLD WLAN module"

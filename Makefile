@@ -450,17 +450,14 @@ KBUILD_LDFLAGS :=
 GCC_PLUGINS_CFLAGS :=
 CLANG_FLAGS :=
 
+-include OplusKernelEnvConfig.mk
+
 # ifdef VENDOR_EDIT
 KBUILD_CFLAGS +=   -DVENDOR_EDIT
 KBUILD_CPPFLAGS += -DVENDOR_EDIT
 CFLAGS_KERNEL +=   -DVENDOR_EDIT
 CFLAGS_MODULE +=   -DVENDOR_EDIT
 # endif
-# The Android build environment provides BRAND_SHOW_FLAG. A standalone build
-# has no such environment, so default to OnePlus (it picks the dts device list
-# and the charger/haptic sources). Override with BRAND_SHOW_FLAG=... if needed.
-BRAND_SHOW_FLAG ?= oneplus
-export BRAND_SHOW_FLAG
 ifeq ($(BRAND_SHOW_FLAG),oneplus)
 KBUILD_CFLAGS += -DOPLUS_CUSTOM_OP_DEF
 endif
@@ -471,8 +468,6 @@ KBUILD_CPPFLAGS += -DOPLUS_FEATURE_POWER_EFFICIENCY
 CFLAGS_KERNEL +=   -DOPLUS_FEATURE_POWER_EFFICIENCY
 CFLAGS_MODULE +=   -DOPLUS_FEATURE_POWER_EFFICIENCY
 # endif
-
--include OplusKernelEnvConfig.mk
 
 #ifdef VENDOR_EDIT
 ifneq (,$(findstring Aging,$(SPECIAL_VERSION)))

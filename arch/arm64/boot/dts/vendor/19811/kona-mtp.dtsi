@@ -176,7 +176,7 @@
 	};
 
 	//#ifdef OPLUS_FEATURE_FINGERPRINT
-	oplus_fp_common {
+	oppo_fp_common {
 		compatible = "oplus,fp_common";
 		oplus,fp_gpio_num = <1>; /* the gpio number of fingerprint id used */
 		oplus,fp_gpio_0 = <&tlmm 77 0x0>;

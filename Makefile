@@ -3,7 +3,12 @@ VERSION = 4
 PATCHLEVEL = 19
 SUBLEVEL = 157
 EXTRAVERSION =
-NAME = "People's Front"
+NAME = "Tropsi-X-Kernel"
+
+# Kernel branding: build user and host shown in /proc/version.
+# A value already set in the environment (for example by CI) takes priority.
+export KBUILD_BUILD_USER ?= TropsPk
+export KBUILD_BUILD_HOST ?= Tropsi-X-Kernel
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"

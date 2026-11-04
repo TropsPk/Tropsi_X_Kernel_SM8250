@@ -11,34 +11,6 @@ config OPLUS_CHARGER_MTK
 	help
 	  Say Y here to declare charging system is on MTK
 
-config OPLUS_CALL_MODE_SUPPORT
-	bool "OPLUS call mode support"
-	help
-	  Say Y to include support
-
-config OPLUS_SMART_CHARGER_SUPPORT
-	bool "OPLUS smart charger support"
-	help
-	  Say Y to include support
-
-config OPLUS_RTC_DET_SUPPORT
-	bool "OPLUS RTC DET SUPPORT"
-	default n
-	help
-	  Say Y to include support
-
-config OPLUS_CHECK_CHARGERID_VOLT
-	bool "OPLUS CHECK CHARGERID VOLT"
-	default n
-	help
-	  Say Y to include support
-
-config OPLUS_SHIP_MODE_SUPPORT
-	bool "OPLUS_SHIP_MODE_SUPPORT"
-	default n
-	help
-	  Say Y to include support
-
 config OPLUS_CHG_DYNAMIC_CONFIG
 	bool "OPLUS_CHG_DYNAMIC_CONFIG"
 	default n

@@ -18,9 +18,6 @@ subdir-y += 19811
 subdir-y += 19805
 subdir-y += 20809
 subdir-y += 20828
-#7250 NORD
-subdir-y += 20801
-subdir-y += 20813
 else ifeq ($(strip $(BRAND_SHOW_FLAG)), oplus)
 #oplus SM8250 project
 subdir-y += 19795

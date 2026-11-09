@@ -640,11 +640,6 @@ config OPLUS_RF_CABLE_MONITOR
 #endif /* OPLUS_FEATURE_TP_BASIC */
 
 #ifdef OPLUS_FEATURE_SIM_DETECT
-config SIM_DETECT
-	tristate "SIM_DETECT system"
-	default n
-	help
-	  Say Y here to enable sim detect system support
 config HAPTIC_FEEDBACK
     tristate "Haptic driver feedback for awinic aw8697 series"
     help

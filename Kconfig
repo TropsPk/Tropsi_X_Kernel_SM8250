@@ -20,6 +20,12 @@ config OPLUS_SYSTEM_KERNEL_MTK
   help
 	define this config to Distinguish between qcom and mtk platform
 
+config OPLUS_FEATURE_PANIC_FLUSH
+  bool "fsync optimization "
+  default y
+  help
+	define this config to flush device cache in panic
+
 config OPLUS_SLUB_TEST
 	string
 	default "$(OPLUS_SLUB_TEST)"

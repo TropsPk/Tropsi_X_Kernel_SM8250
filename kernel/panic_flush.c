@@ -69,6 +69,11 @@ int panic_flush_device_cache(int timeout)
 		return timeout;
 	}
 
+	if (!pfc) {
+		pr_emerg("%s: panic flush not ready, skip\n", __func__);
+		return timeout;
+	}
+
 	if (atomic_inc_return(&pfc->flush_issuing) == 1 &&
 		waitqueue_active(&pfc->flush_wq)) {
 		pr_emerg("%s: flush device cache\n", __func__);

@@ -640,13 +640,6 @@ config OPLUS_RF_CABLE_MONITOR
 #endif /* OPLUS_FEATURE_TP_BASIC */
 
 #ifdef OPLUS_FEATURE_SIM_DETECT
-config HAPTIC_FEEDBACK
-    tristate "Haptic driver feedback for awinic aw8697 series"
-    help
-      This option enables support for aw8697 series Haptic Driver Feedback.
-#endif /* OPLUS_FEATURE_SIM_DETECT */
-
-#ifdef OPLUS_FEATURE_SIM_DETECT
 config OEM_QMI
 	tristate "oem qmi feature"
 	default n

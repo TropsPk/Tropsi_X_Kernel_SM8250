@@ -2734,7 +2734,7 @@ static int init_charger_proc(struct oplus_chg_chip *chip)
 	prEntry_tmp = proc_create_data("force_current_limit", 0664, prEntry_da, &proc_force_current_limit_ops, chip);
 	if (prEntry_tmp == NULL) {
 		ret = -1;
-		chg_debug("Couldn't create proc_force_current_limit_ops entry, %d\n");
+		chg_debug("Couldn't create proc_force_current_limit_ops entry, %d\n", __LINE__);
 	}
 
 	ret = misc_register(&oplus_chg_device);
@@ -3922,7 +3922,7 @@ void oplus_chg_smooth_switch_v2_parse_dt(struct oplus_chg_chip *chip)
 	if (reserve_soc_by_rus(chip)) {
 		chip->rsd.smooth_switch_v2 = true;
 		chip->rsd.reserve_soc = chip->rsd.rus_reserve_soc;
-		chg_err("override by rus %d %d\n", chip->rsd.rus_reserve_soc);
+		chg_err("override by rus %d\n", chip->rsd.rus_reserve_soc);
 	} else {
 		chip->rsd.smooth_switch_v2 = of_property_read_bool(node, "oplus,smooth_switch_v2");
 		if (chip->rsd.smooth_switch_v2) {

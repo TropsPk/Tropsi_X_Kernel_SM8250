@@ -2072,7 +2072,7 @@ static int sc8574a_rcv_msg(struct oplus_sc8574a_ufcs *chip)
 
 	sc8574a_read_byte(chip, SC8547A_ADDR_RX_LENGTH, &rx_length);
 	if (rx_length > SC8547A_LEN_MAX) {
-		ufcs_err("rx_length = %d, limit to SC8547A_LEN_MAX\n");
+		ufcs_err("rx_length = %d, limit to SC8547A_LEN_MAX\n", rx_length);
 		rx_length = SC8547A_LEN_MAX;
 	}
 	rcv->len = rx_length;
@@ -2527,7 +2527,7 @@ static int sc8574a_parse_src_cap(void *payload)
 	int len = sc8574a_ufcs->rcv_msg.len / PDO_LENGTH;
 
 	if ((len > MAX_PDO_NUM) || (len < MIN_PDO_NUM)) {
-		ufcs_err("error PDO number = %d");
+		ufcs_err("error PDO number = %d", len);
 		sc8574a_send_refuse(REASON_CMD_NOT_DETECT);
 		return -EINVAL;
 	}

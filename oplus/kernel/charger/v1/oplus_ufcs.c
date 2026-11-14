@@ -1571,7 +1571,7 @@ static int oplus_ufcs_check_bcc_curr(struct oplus_ufcs_chip *chip)
 	for (index_min = 0; index_min < chip->batt_curves.batt_curve_num;
 	     index_min++) {
 		ufcs_debug(
-			" [%d, %d, %d, %d] [%d, %d, %d, %d]\n", index_vbat,
+			" [%d, %d, %d, %d] [%d, %d, %d]\n", index_vbat,
 			index_min,
 			chip->batt_curves.batt_curves[index_min].target_vbus,
 			chip->batt_curves.batt_curves[index_min].target_vbat,

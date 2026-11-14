@@ -147,7 +147,7 @@ int bq25980_slave_get_tdie(void)
 	       (((data_block[0] & BQ25980_TDIE_POL_H_MASK) << 8) |
 		(data_block[1] & BQ25980_TDIE_POL_L_MASK)) *
 		       BQ25980_TDIE_ADC_LSB;
-	pps_err("0x37[0x%x] 0x38[0x%x] tdie[%d] = %d\n", data_block[0],
+	pps_err("0x37[0x%x] 0x38[0x%x] tdie[%d]\n", data_block[0],
 		data_block[1], tdie);
 
 	return tdie;

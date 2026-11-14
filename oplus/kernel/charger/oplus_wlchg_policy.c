@@ -1905,7 +1905,7 @@ static int handle_batt_temp_cool(struct op_chg_chip *chip)
 
 	if (((pre_vbat <= chg_param->cool_vbat_thr_mv) && (chip->batt_volt > chg_param->cool_vbat_thr_mv)) ||
 	    ((pre_vbat > chg_param->cool_vbat_thr_mv) && (chip->batt_volt <= chg_param->cool_vbat_thr_mv))) {
-		chg_info("battery voltage changes%d\n");
+		chg_info("battery voltage changes%d\n", chip->batt_volt);
 		chg_status->is_power_changed = true;
 	}
 	pre_vbat = chip->batt_volt;
@@ -2330,7 +2330,7 @@ static void fastchg_ffc_param_init(struct op_chg_chip *chip)
 static int fastchg_err_check(struct op_chg_chip *chip)
 {
 	bool cp2_is_ok;
-	bool cp2_is_enabled;
+	bool cp2_is_enabled = false;
 	u8 cp1_status = CP_REEADY;
 	struct wpc_data *chg_status = &chip->wlchg_status;
 	int ret;
@@ -3144,7 +3144,7 @@ static int wlchg_charge_status_process(struct op_chg_chip *chip)
 	int bq_adc_vbat = 0;
 	int work_freq;
 	int temp_val;
-	bool cp2_is_enabled;
+	bool cp2_is_enabled = false;
 	//static int wait_cep_count;
 	struct rx_chip *rx_chip = g_rx_chip;
 	union power_supply_propval pval = {

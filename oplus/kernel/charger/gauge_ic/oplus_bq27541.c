@@ -1309,7 +1309,7 @@ static bool zy0603_afi_update_done(void)
 	}
 
 	if (gauge_ic->batt_zy0603 && gauge_ic->afi_count > 0 && !gauge_ic->afi_update_done) {
-		printk(KERN_ERR "[%s] return for afi_update_done not finished\n");
+		printk(KERN_ERR "[%s] return for afi_update_done not finished\n", __func__);
 		return false;
 	} else {
 		return true;
@@ -3064,7 +3064,7 @@ static bool bq27541_get_battery_hmac(void)
 		get_smem_batt_info(&auth_data, 1);
 		if (init_gauge_auth(&auth_data, gauge_ic->authenticate_data))
 			return true;
-		pr_info("%s:gauge authenticate failed, try again\n");
+		pr_info("%s:gauge authenticate failed, try again\n", __func__);
 		get_smem_batt_info(&auth_data, 0);
 		return init_gauge_auth(&auth_data, gauge_ic->authenticate_data);
 	} else if (gauge_ic->sha1_key_index == ZY0602_KEY_INDEX) {

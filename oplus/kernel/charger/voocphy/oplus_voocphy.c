@@ -2280,7 +2280,7 @@ int oplus_voocphy_calcucate_identification_code(struct oplus_voocphy_manager *ch
 	unsigned char code_id_temp_l = 0, code_id_temp_h = 0;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2323,7 +2323,7 @@ int oplus_voocphy_handle_identification_cmd(struct oplus_voocphy_manager *chip)
 	uint16_t temp = 0;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2353,7 +2353,7 @@ int oplus_voocphy_handle_adapter_check_commu_process_cmd(struct oplus_voocphy_ma
 	int status = VOOCPHY_SUCCESS;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2410,7 +2410,7 @@ int oplus_voocphy_handle_tell_model_cmd(struct oplus_voocphy_manager *chip)
 	int status = VOOCPHY_SUCCESS;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2432,7 +2432,7 @@ int oplus_voocphy_handle_tell_model_process_cmd(struct oplus_voocphy_manager *ch
 	int status = VOOCPHY_SUCCESS;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2467,7 +2467,7 @@ int oplus_voocphy_handle_ask_bat_model_cmd(struct oplus_voocphy_manager *chip)
 	int status = VOOCPHY_SUCCESS;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2492,7 +2492,7 @@ int oplus_voocphy_handle_ask_bat_model_process_cmd(struct oplus_voocphy_manager 
 	unsigned char temp_data_h = 0;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2574,7 +2574,7 @@ int oplus_voocphy_vbus_vbatt_detect(struct oplus_voocphy_manager *chip)
 	u8 vbus_status = 0;
 	static int vbus_vbatt_detect_err_count = 0;
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2641,7 +2641,7 @@ int oplus_voocphy_handle_is_vbus_ok_cmd(struct oplus_voocphy_manager *chip)
 	int status = VOOCPHY_SUCCESS;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2815,7 +2815,7 @@ int oplus_voocphy_handle_ask_current_level_cmd(struct oplus_voocphy_manager *chi
 	//unsigned char temp_data_l = 0, temp_data_h = 0;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2878,7 +2878,7 @@ int oplus_voocphy_non_vooc20_handle_get_batt_vol_cmd(struct oplus_voocphy_manage
 	unsigned int vbatt1 = 0;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -2960,7 +2960,7 @@ int oplus_voocphy_vooc20_handle_get_batt_vol_cmd(struct oplus_voocphy_manager *c
 	unsigned char data_temp_l = 0, data_temp_h = 0;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -3031,7 +3031,7 @@ int oplus_voocphy_handle_get_batt_vol_cmd(struct oplus_voocphy_manager *chip)
 	int status = VOOCPHY_SUCCESS;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -3057,7 +3057,7 @@ int oplus_voocphy_handle_null_cmd(struct oplus_voocphy_manager *chip)
 	unsigned char dchg_enable_status = 0;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -3082,7 +3082,7 @@ int oplus_voocphy_handle_tell_usb_bad_cmd(struct oplus_voocphy_manager *chip)
 	int status = VOOCPHY_SUCCESS;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -3104,7 +3104,7 @@ int oplus_voocphy_handle_ask_ap_status(struct oplus_voocphy_manager *chip)
 	int status = VOOCPHY_SUCCESS;
 
 	if (!chip) {
-		voocphy_info("%s chip null\n");
+		voocphy_info("%s chip null\n", __func__);
 		return VOOCPHY_EFATAL;
 	}
 
@@ -3532,7 +3532,7 @@ irqreturn_t oplus_voocphy_interrupt_handler(struct oplus_voocphy_manager *chip)
 	calltime = ktime_get();
 	//for flash led
 	if (chip->fastchg_need_reset) {
-		voocphy_info("fastchg_need_reset%d\n");
+		voocphy_info("fastchg_need_reset%d\n", chip->fastchg_need_reset);
 		chip->fastchg_need_reset = 0;
 		oplus_voocphy_set_status_and_notify_ap(chip, FAST_NOTIFY_USER_EXIT_FASTCHG);
 		goto handle_done;

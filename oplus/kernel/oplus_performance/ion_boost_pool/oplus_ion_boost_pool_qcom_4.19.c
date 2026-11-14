@@ -406,7 +406,7 @@ static ssize_t boost_pool_proc_write(struct file *file,
 	struct ion_boost_pool *boost_pool = PDE_DATA(file_inode(file));
 
 	if (IS_ERR_OR_NULL(boost_pool)) {
-		pr_err("%s: boost pool is NULL.\n");
+		pr_err("%s: boost pool is NULL.\n", __func__);
 		return -EFAULT;
 	}
 
@@ -454,7 +454,7 @@ static ssize_t boost_pool_proc_write(struct file *file,
 		wake_up_interruptible(&boost_pool->prefill_waitq);
 		mutex_unlock(&boost_pool->prefill_mutex);
 	} else {
-		pr_err("%s: prefill already running. \n");
+		pr_err("%s: prefill already running. \n", __func__);
 		return -EBUSY;
 	}
 
@@ -494,7 +494,7 @@ static ssize_t boost_pool_low_proc_write(struct file *file,
 	struct ion_boost_pool *boost_pool = PDE_DATA(file_inode(file));
 
 	if (IS_ERR_OR_NULL(boost_pool)) {
-		pr_err("%s: boost pool is NULL.\n");
+		pr_err("%s: boost pool is NULL.\n", __func__);
 		return -EFAULT;
 	}
 

@@ -261,7 +261,7 @@ int fb_kevent_send_to_user(struct kernel_packet_info *userinfo)
 			&skbuff);
 
 	if (ret) {
-		pr_err("[ERROR]:genl_msg_prepare_usr_msg err, ret is %d \n");
+		pr_err("[ERROR]:genl_msg_prepare_usr_msg err, ret is %d \n", ret);
 		return ret;
 	}
 

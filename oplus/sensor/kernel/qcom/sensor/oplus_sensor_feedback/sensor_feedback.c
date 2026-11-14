@@ -764,7 +764,7 @@ static int sensor_report_thread(void *arg)
 		spin_unlock(&sensor_fb_cxt->rw_lock);
 	}
 
-	pr_info("sensor_feedback ret =%s\n", ret);
+	pr_info("sensor_feedback ret =%d\n", ret);
 	return ret;
 }
 

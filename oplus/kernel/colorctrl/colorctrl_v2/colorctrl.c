@@ -485,7 +485,7 @@ static int do_operation(struct color_ctrl_device *cd, int charge_volt, int charg
 		}
 
 		if (ret) {
-			COLOR_INFO("disable coloring %d power failed");
+			COLOR_INFO("disable coloring power failed");
 			goto OUT;
 		}
 		break;
@@ -1362,7 +1362,7 @@ static ssize_t proc_colorctrl_main_parameter_write(struct file *file, const char
 	}
 
 	if (copy_from_user(buf, buffer, count)) {
-		COLOR_INFO("%s:count > %d\n", PAGESIZE);
+		COLOR_INFO("count > %d", PAGESIZE);
 		return count;
 	}
 	color_para = cd->color_control_para;

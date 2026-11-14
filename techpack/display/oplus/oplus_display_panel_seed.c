@@ -67,7 +67,7 @@ int dsi_panel_seed_mode_unlock(struct dsi_panel *panel, int mode)
 			int frame_time_us = mult_frac(1000, 1000, panel->cur_mode->timing.refresh_rate);
 			rc = is_support_panel_dc_exit_backlight_select(panel, frame_time_us);
 			if (rc) {
-				pr_err("[%s] failed to is_support_panel_dc_exit_backlight_select, rc=%d\n", rc);
+				pr_err("[%s] failed to is_support_panel_dc_exit_backlight_select, rc=%d\n", panel->name, rc);
 			}
 	}
 
@@ -199,7 +199,7 @@ int dsi_panel_dc_seed_mode_unlock(struct dsi_panel *panel, int mode)
 		int frame_time_us = mult_frac(1000, 1000, panel->cur_mode->timing.refresh_rate);
 		rc = is_support_panel_dc_exit_backlight_select(panel, frame_time_us);
 		if (rc) {
-			pr_err("[%s] failed to is_support_panel_dc_exit_backlight_select, rc=%d\n", rc);
+			pr_err("[%s] failed to is_support_panel_dc_exit_backlight_select, rc=%d\n", panel->name, rc);
 		}
 	}
 

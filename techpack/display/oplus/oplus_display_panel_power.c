@@ -150,7 +150,7 @@ int oplus_display_panel_get_pwr(void *data)
 	u32 vol_id = (panel_vol->panel_id - 1);
 	pr_err("%s : [id] = %d\n", __func__, vol_id);
 
-	if (vol_id < 0) {
+	if (vol_id >= PANEL_VOLTAGE_ID_MAX) {
 		pr_err("%s error id: [id] = %d\n", __func__, vol_id);
 		return -EINVAL;
 	}

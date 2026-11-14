@@ -567,7 +567,7 @@ static int read_data_from_share_mem(struct sensor_fb_cxt *sensor_fb_cxt)
 }
 
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(5, 10, 0))
-static int reserve_fb_share_mem()
+static int reserve_fb_share_mem(void)
 {
 	int rc = 0;
 	size_t smem_size = 0;

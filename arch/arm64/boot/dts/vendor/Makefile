@@ -2,52 +2,19 @@
 # Copyright (C) 2018-2020 Oplus. All rights reserved.
 vendor := $(srctree)/$(src)
 
-#ifndef OPLUS_BUG_STABILITY
-#ifneq "$(wildcard $(vendor)/qcom)" ""
-#	subdir-y += qcom
-#endif
-#else
-# vendor/qcom only holds the Qualcomm reference boards; the device folders below
-# carry their own base dtbs
-#subdir-y += qcom
-ifeq ($(strip $(BRAND_SHOW_FLAG)), oneplus)
-#oneplus SM8250 project
+# vendor/qcom only holds the Qualcomm reference boards and is not built; the
+# device folders below carry their own base dtbs.
+
+# SM8250
+# 8
 subdir-y += 19821
+# 8 tmo
 subdir-y += 19855
+# 8 pro
 subdir-y += 19811
+# 8T
 subdir-y += 19805
+# 8T tmo
 subdir-y += 20809
+# 9R
 subdir-y += 20828
-else ifeq ($(strip $(BRAND_SHOW_FLAG)), oplus)
-#oplus SM8250 project
-subdir-y += 19795
-subdir-y += 19795_t0_evt2
-subdir-y += 20607
-subdir-y += 19705
-subdir-y += 19705_t0_evt2
-subdir-y += 21615
-subdir-y += 21619
-subdir-y += 21623
-subdir-y += 21733
-#oplus SM7250 project
-subdir-y += oplus
-else
-#oplus SM8250 project
-subdir-y += 19065
-subdir-y += 19066
-subdir-y += 19161
-subdir-y += 20135
-subdir-y += 20061
-subdir-y += 20161
-subdir-y += 20351
-subdir-y += 21027
-#oplus SM7250/SM7225 project
-subdir-y += 19125
-subdir-y += 19101
-subdir-y += 19335
-subdir-y += 19191
-subdir-y += 19015
-subdir-y += 19517
-subdir-y += oplus
-endif
-#endif
